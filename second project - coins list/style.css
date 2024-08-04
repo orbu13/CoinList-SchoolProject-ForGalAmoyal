@@ -1,0 +1,285 @@
+/* style.css */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9;
+  color: #333;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+}
+
+header ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+header ul li {
+  margin: 0;
+}
+
+header ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+header ul li a:hover {
+  text-decoration: underline;
+}
+
+.about-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.about-container h1 {
+  text-decoration: underline;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.about-container h2 {
+  text-decoration: underline;
+  font-size: 2em;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.about-container p {
+  font-size: 1.2em;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.about-container ul {
+  text-align: left;
+  display: inline-block;
+  list-style: none;
+  padding: 0;
+  font-size: 1.2em;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.about-container ul li {
+  margin-bottom: 10px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #333;
+  color: #fff;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+
+.parallax {
+  height: 100vh;
+  background-image: url("https://media.istockphoto.com/id/1068744882/photo/gold-bitcoin-and-lines-of-code.jpg?s=2048x2048&w=is&k=20&c=iWXGduXDS1tfvfTG8tnqpiDwQYL46w91ws0GKzd0eA0=");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.information-container {
+  text-align: center;
+}
+
+.information-container h1 {
+  text-decoration: underline;
+}
+
+.coinCard {
+  border: 1px solid black;
+  border-radius: 20px;
+  position: relative;
+  padding: 20px;
+}
+
+.coinCard h2 {
+  text-decoration: underline;
+}
+
+.buttonInfo {
+  margin-inline: auto;
+  display: block;
+}
+
+.modal {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  top: 0;
+  left: 0;
+}
+
+.modalContent {
+  border: 1px solid #888;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 0 auto;
+  background-color: white;
+  width: 80%;
+  max-width: 500px;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.close {
+  margin-top: 100px;
+}
+
+.dollarNameElement {
+  text-decoration: underline;
+}
+
+.toggleSwitchContainer {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #2196f3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.coinsCardModal {
+  position: relative;
+  padding: 20px;
+}
+
+.coinsContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 20px;
+  padding: 20px;
+}
+
+@media (max-width: 1500px) {
+  .coinsContainer {
+      grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (max-width: 900px) {
+  .coinsContainer {
+      grid-template-columns: 1fr 1fr;
+  }
+}
+
+#progress-placeHolder{
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+#progress-placeHolder.show{
+  visibility: visible;
+  }
+
+.progress-container {
+  width: 80%;
+  height: 30px;
+  background-color: #f3f3f3;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-bar {
+  width: 0%;
+  height: 100%;
+  background-color: #3498db;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: progress 2s linear infinite;
+}
+
+@keyframes progress {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
